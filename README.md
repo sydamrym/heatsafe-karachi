@@ -42,6 +42,7 @@ HeatSafe Karachi uses **FortyGuard's 2-meter precision temperature intelligence*
 
 ```
 
+```
 ##  API Endpoints
 
 | Endpoint | Description |
@@ -63,6 +64,7 @@ HeatSafe Karachi uses **FortyGuard's 2-meter precision temperature intelligence*
 
 ```
 
+```
 ##  Risk Engine Logic
 
 ```
@@ -72,16 +74,16 @@ Apparent >= 40°C  → HIGH    (Severely limit activity)
 Apparent >= 35°C  → CAUTION (Limit strenuous activity)
 Else              → SAFE
 ```
-
+```
 **Why wet-bulb?** Wet-bulb temperature measures the body's ability to cool via sweating. At 35°C wet-bulb, even healthy humans die within hours. This is the most important metric for heat safety.
-
+```
 
 ##  Deploy to Production 
 
 ### Backend → Render.com
 
 ### Frontend → Vercel
-
+```
 ```
 ##  Why This 
 
