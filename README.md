@@ -31,7 +31,7 @@ HeatSafe Karachi uses **FortyGuard's 2-meter precision temperature intelligence*
         ▼                        ▼
    Risk Color Map          OpenAI GPT-4o-mini
    Area Detail Cards       (Natural language alerts)
-
+```
 
 **Tech Stack:**
 - **Frontend:** React 18, Leaflet, Vite, Lucide Icons
@@ -40,7 +40,7 @@ HeatSafe Karachi uses **FortyGuard's 2-meter precision temperature intelligence*
 - **AI:** OpenAI GPT-4o-mini (fallback engine included)
 - **Deploy:** Render (backend) + Vercel (frontend)
 
-
+```
 
 ##  API Endpoints
 
@@ -50,7 +50,7 @@ HeatSafe Karachi uses **FortyGuard's 2-meter precision temperature intelligence*
 | `GET /api/dashboard?date=YYYY-MM-DD&time=HH:MM` | **Main endpoint** — full dashboard with all areas, risk levels, AI summaries |
 | `GET /api/area/{area_id}` | Detailed heatmap GeoJSON for a single area |
 
-
+```
 
 ##  Karachi Test Areas
 
@@ -61,7 +61,7 @@ HeatSafe Karachi uses **FortyGuard's 2-meter precision temperature intelligence*
 | **Saddar** | Commercial Dense | Heavy traffic, markets = high exposure. |
 | **Lyari** | Dense Residential | Limited green cover = vulnerable population. |
 
-
+```
 
 ##  Risk Engine Logic
 
@@ -82,7 +82,7 @@ Else              → SAFE
 
 ### Frontend → Vercel
 
-
+```
 ##  Why This 
 
 1. **Real API Integration** — Every number comes from FortyGuard's live API
@@ -128,3 +128,4 @@ heatsafe-karachi/
 │   ├── deploy-backend.sh
 │   └── deploy-frontend.sh
 └── README.md
+```
