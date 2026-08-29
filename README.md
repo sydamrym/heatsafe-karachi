@@ -31,7 +31,7 @@ HeatSafe Karachi uses **FortyGuard's 2-meter precision temperature intelligence*
         ▼                        ▼
    Risk Color Map          OpenAI GPT-4o-mini
    Area Detail Cards       (Natural language alerts)
-```
+
 
 **Tech Stack:**
 - **Frontend:** React 18, Leaflet, Vite, Lucide Icons
@@ -42,60 +42,6 @@ HeatSafe Karachi uses **FortyGuard's 2-meter precision temperature intelligence*
 
 
 
-##  Quick Start (Local Development)
-
-### Step 1: Clone & Setup Backend
-
-```bash
-cd backend
-python -m venv venv
-source venv/bin/activate  # Windows: venv\Scripts\activate
-pip install -r requirements.txt
-```
-
-### Step 2: Configure Environment
-
-```bash
-cp .env.example .env
-# Edit .env and add your keys:
-# FORTYGUARD_API_KEY=your_fortyguard_key
-# OPENAI_API_KEY=your_openai_key (optional, has fallback)
-```
-
-### Step 3: Start Backend
-
-```bash
-uvicorn main:app --reload --port 8000
-```
-
-Backend will be at: `http://localhost:8000`
-API docs at: `http://localhost:8000/docs`
-
-### Step 4: Setup Frontend
-
-```bash
-cd frontend
-npm install
-```
-
-### Step 5: Configure Frontend
-
-```bash
-cp .env.example .env
-# Edit .env:
-# VITE_API_URL=http://localhost:8000
-```
-
-### Step 6: Start Frontend
-
-```bash
-npm run dev
-```
-
-Frontend will be at: `http://localhost:5173`
-
----
-
 ##  API Endpoints
 
 | Endpoint | Description |
@@ -104,7 +50,7 @@ Frontend will be at: `http://localhost:5173`
 | `GET /api/dashboard?date=YYYY-MM-DD&time=HH:MM` | **Main endpoint** — full dashboard with all areas, risk levels, AI summaries |
 | `GET /api/area/{area_id}` | Detailed heatmap GeoJSON for a single area |
 
----
+
 
 ##  Karachi Test Areas
 
@@ -134,40 +80,10 @@ Else              → SAFE
 
 ### Backend → Render.com
 
-1. Push code to **GitHub**
-2. Go to [render.com](https://render.com) → **New Web Service**
-3. Connect your repo
-4. **Root Directory:** `backend`
-5. **Build Command:** `pip install -r requirements.txt`
-6. **Start Command:** `uvicorn main:app --host 0.0.0.0 --port $PORT`
-7. **Environment Variables:**
-   - `FORTYGUARD_API_KEY` = your key
-   - `OPENAI_API_KEY` = your key (optional)
-   - `CORS_ORIGINS` = `https://your-frontend.vercel.app,http://localhost:5173`
-
 ### Frontend → Vercel
 
-```bash
-cd frontend
-npm install -g vercel
-vercel --prod
-```
 
-Then in Vercel dashboard, add environment variable:
-- `VITE_API_URL` = `https://your-backend.onrender.com`
-
----
-
-##  Fallback Strategy
-
-If FortyGuard API is slow or fails:
-- Backend gracefully returns cached/estimated data
-- Frontend shows "Data temporarily unavailable" with historical context
-- **Demo tip:** If API is down during your pitch, switch `USE_MOCK = True` in `backend/app/routers/heatmap.py` and redeploy in 2 minutes
-
----
-
-##  Why This Wins
+##  Why This 
 
 1. **Real API Integration** — Every number comes from FortyGuard's live API
 2. **Actionable Intelligence** — Not just a map, but "what do I do about it?"
@@ -212,23 +128,3 @@ heatsafe-karachi/
 │   ├── deploy-backend.sh
 │   └── deploy-frontend.sh
 └── README.md
-```
-
-
-
-## ⚡ Emergency Demo Tips
-
-**If API is slow during demo:**
-```python
-# In backend/app/routers/heatmap.py, line 12:
-USE_MOCK = True  # Switch to mock data instantly
-```
-
-**If you need to show the API is real:**
-- Open browser dev tools → Network tab
-- Show the `GET /api/dashboard` request
-- Activity IDs are logged in backend console
-
-**If judges ask about accuracy:**
-- "We use FortyGuard's Large Temperature Models, validated against ground sensors, recognized by NVIDIA"
-- "Wet-bulb is the gold standard for human heat stress — not just temperature"
