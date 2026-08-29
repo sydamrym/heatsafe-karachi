@@ -52,7 +52,7 @@ HeatSafe Karachi uses **FortyGuard's 2-meter precision temperature intelligence*
 | `GET /api/area/{area_id}` | Detailed heatmap GeoJSON for a single area |
 
 ```
-
+```
 ##  Karachi Test Areas
 
 | Area | Type | Why It Matters |
@@ -64,7 +64,7 @@ HeatSafe Karachi uses **FortyGuard's 2-meter precision temperature intelligence*
 
 ```
 
-```
+
 ##  Risk Engine Logic
 
 ```
@@ -84,7 +84,7 @@ Else              → SAFE
 
 ### Frontend → Vercel
 ```
-```
+
 ##  Why This 
 
 1. **Real API Integration** — Every number comes from FortyGuard's live API
